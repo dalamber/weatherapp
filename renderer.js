@@ -4,3 +4,11 @@
 // `nodeIntegration` is turned off. Use `preload.js` to
 // selectively enable features needed in the rendering
 // process.
+window.onload = function() {
+    getWeatherData('Tomsk', function(city, temperature) {
+        console.log('City:' + city + '; temperature: ' + temperature)
+
+        replaceText('city-placeholder', city)
+        replaceText('temp-placeholder', temperature + ' °C')
+    })
+}
